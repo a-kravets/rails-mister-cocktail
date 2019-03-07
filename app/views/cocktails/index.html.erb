@@ -1,8 +1,9 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.pexels.com/photos/1283219/pexels-photo-1283219.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.pexels.com/photos/274078/pexels-photo-274078.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
   <div class="container">
-    <h1>The best <strong>cocktails</strong> in <strong>Milan</strong>!</h1>
-    <p>Change your life and drink only the best.</p>
-    <a class="btn btn-flat" href="#">Apply now</a>
+    <h1>The best <strong>cocktails</strong> in <strong>Milan</strong></h1>
+    <p>Change your life and drink only the best</p>
+    <% cocktail1 = @cocktails.sample(1) %>
+    <%= link_to "I'm feeling damn lucky!", cocktail_path(cocktail1), class: "btn btn-flat" %>
   </div>
 </div>
 
@@ -12,17 +13,12 @@
 
 
     <% @cocktails.each do |cocktail| %>
+    <%= link_to cocktail_path(cocktail) do %>
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-
-      <div class="card">
-
-
-        <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
-
-
-      </div>
-
+  <%= cocktail.name %>
   </div>
+<% end %>
+
     <% end %>
 </div>
 </div>
