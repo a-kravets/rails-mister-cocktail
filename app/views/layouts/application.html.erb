@@ -10,6 +10,13 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script>
+      AOS.init();
+    </script>
+
   </head>
 
   <body>
@@ -35,7 +42,6 @@
           <% end  %>
         </div>
       </div>
-
 
 
 
@@ -67,6 +73,8 @@
 
     <%= javascript_include_tag "application" %> <!-- from app/assets/javascripts/application.js -->
     <%= javascript_pack_tag "application" %>    <!-- from app/javascript/packs/application.js -->
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 
   </body>
